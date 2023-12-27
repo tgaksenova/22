@@ -1,0 +1,38 @@
+﻿<Page x:Class="crd.ReportsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:crd"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800" Background="Aqua"
+      Title="ReportsPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Страница отчетов" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,10" />
+
+        <TextBlock Grid.Row="1" Text="Выберите параметры отчета:" FontSize="16" Margin="10" />
+
+        <StackPanel Grid.Row="2" Orientation="Vertical" Margin="10">
+            <TextBlock Text="Тип отчета:" FontSize="14" />
+            <ComboBox ItemsSource="{Binding ReportTypes}" SelectedItem="{Binding SelectedReportType}" FontSize="14" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Orientation="Vertical" Margin="10">
+            <TextBlock Text="Дополнительные опции:" FontSize="14" />
+            <CheckBox Content="Включить страхование жизни" IsChecked="{Binding IncludeLifeInsurance}" FontSize="14" />
+            <!-- Добавьте другие опции в соответствии с требованиями -->
+        </StackPanel>
+
+        <Button Grid.Row="4" Content="Сформировать отчет" Command="{Binding GenerateReportCommand}" Width="150" HorizontalAlignment="Center" Margin="10" />
+    </Grid>
+</Page>

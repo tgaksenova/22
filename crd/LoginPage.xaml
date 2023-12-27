@@ -1,0 +1,30 @@
+﻿<Page x:Class="crd.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:crd"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800" Background="Aqua"
+      Title="LoginPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Авторизация" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,30,0,10" />
+
+        <StackPanel Grid.Row="1" Orientation="Vertical" Margin="20">
+            <TextBlock Text="Имя пользователя" FontSize="16" />
+            <TextBox x:Name="TextBoxLogin" FontSize="14" />
+
+            <TextBlock Text="Пароль" FontSize="16" Margin="0,10,0,0" />
+            <PasswordBox x:Name="PasswordBox" FontSize="14" />
+
+            <Button Content="Войти" Command="{Binding LoginCommand}" FontSize="16" HorizontalAlignment="Center" Margin="0,20,0,0" Width="100" Click="Button_Click" />
+        </StackPanel>
+    </Grid>
+</Page>
